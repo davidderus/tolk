@@ -1,5 +1,4 @@
 $(function () {
-  console.debug('Loading actions');
   // Copy text action
   $(".translations .copy").click(function (e) {
     e.preventDefault();
