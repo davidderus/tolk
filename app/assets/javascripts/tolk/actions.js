@@ -3,10 +3,10 @@ $(function () {
   $(".translations .copy").click(function (e) {
     e.preventDefault();
 
-    var row = $(this).parents(".row")
-      , original_text = row.find(".original textarea").val();
+    var row = $(this).closest(".row")
+      , original_text = row.find(".original textarea, .original input[type=text]").val();
 
-    row.find(".translation textarea").val(original_text.trim()).trigger("change");
+    row.find(".translation textarea, .translation input[type=text]").val(original_text.trim()).trigger("change");
   });
 
   // avoid lose data
