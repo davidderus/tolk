@@ -24,7 +24,7 @@
               <td class="translation">
                 <%= hidden_field_tag :"translations[][id]", phrase.translation.id %>
                 <%= hidden_field_tag :"translations[][locale_id]", phrase.translation.locale_id %>
-                <%= text_area_tag :"translations[][text]", format_i18n_text_area_value(phrase.translation.text), :class => 'locale',
+                <%= text_area_tag :"translations[][text]", format_i18n_text_area_value(phrase.translation.text), :class => 'locale form-control',
                                   :onfocus => "$(this).up('tr').addClassName('active');", :onblur => "$(this).up('tr').removeClassName('active');" %>
               </td>
               <td class="actions">
@@ -32,7 +32,7 @@
                 <span class="warning" title="Interpolation keys don't match">⚠</span>
               </td>
               <td class="original">
-                <%= text_area_tag :"translations[][original_text]", format_i18n_text_area_value(phrase.translations.primary.text), :disabled => true %>
+                <%= text_area_tag :"translations[][original_text]", format_i18n_text_area_value(phrase.translations.primary.text), :disabled => true, :class => 'form-control' %>
 
                 <% if action_name == 'updated' %>
                   <div class="updated">
@@ -56,7 +56,7 @@
         <% end %>
       </table>
       <div class="table_submit">
-        <p><%= locale_form.submit "Save changes", :class => 'save' %></p>
+        <p><%= locale_form.submit "Save changes", :class => 'save btn btn-success' %></p>
       </div>
       <div class="paginate">
         <%= tolk_paginate @phrases %>
