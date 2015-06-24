@@ -49,11 +49,13 @@
               <div class="original col-md-6">
                 <div>
                   Original:
-                  <% if params[:q].present? -%>
-                    <%= highlight(format_i18n_value(phrase.translations.primary.text), params[:q]) -%>
-                  <% else -%>
-                    <%= format_i18n_value(phrase.translations.primary.text) -%>
-                  <% end -%>
+                  <code>
+                    <% if params[:q].present? -%>
+                      <%= highlight(format_i18n_value(phrase.translations.primary.text), params[:q]) -%>
+                    <% else -%>
+                      <%= format_i18n_value(phrase.translations.primary.text) -%>
+                    <% end -%>
+                  </code>
                   <%= boolean_warning if phrase.translations.primary.boolean? -%>
                 </div>
 
