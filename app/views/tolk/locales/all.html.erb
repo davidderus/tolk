@@ -60,11 +60,9 @@
                   <%= hidden_field_tag :"translations[][locale_id]", phrase.translation.locale_id %>
                   <div>Translation:</div>
                   <% if multiline %>
-                    <%= text_area_tag :"translations[][text]", format_i18n_text_area_value(phrase.translation.text), :class => 'locale form-control',
-                                      :onfocus => "$(this).up('tr').addClassName('active');", :onblur => "$(this).up('tr').removeClassName('active');" %>
+                    <%= text_area_tag :"translations[][text]", format_i18n_text_area_value(phrase.translation.text), :class => 'locale form-control' %>
                   <% else %>
-                    <%= text_field_tag :"translations[][text]", format_i18n_text_area_value(phrase.translation.text), :class => 'locale form-control',
-                                      :onfocus => "$(this).up('tr').addClassName('active');", :onblur => "$(this).up('tr').removeClassName('active');" %>
+                    <%= text_field_tag :"translations[][text]", format_i18n_text_area_value(phrase.translation.text), :class => 'locale form-control' %>
                   <% end %>
                 </div>
                 <div class="original col-md-6">

@@ -51,9 +51,9 @@
                       <div>Translation:</div>
 
                       <% if multiline %>
-                        <%= text_area_tag :"translations[][text]", format_i18n_text_area_value(translation.text), :class => "locale form-control", :id => "#{translation.object_id}_text", :onfocus => "$(this).up('tr').addClassName('active');", :onblur => "$(this).up('tr').removeClassName('active');" %>
+                        <%= text_area_tag :"translations[][text]", format_i18n_text_area_value(translation.text), :class => "locale form-control", :id => "#{translation.object_id}_text" %>
                       <% else %>
-                        <%= text_field_tag :"translations[][text]", format_i18n_text_area_value(translation.text), :class => "locale form-control", :id => "#{translation.object_id}_text", :onfocus => "$(this).up('tr').addClassName('active');", :onblur => "$(this).up('tr').removeClassName('active');" %>
+                        <%= text_field_tag :"translations[][text]", format_i18n_text_area_value(translation.text), :class => "locale form-control", :id => "#{translation.object_id}_text" %>
                       <% end %>
                     </div>
                     <div class="original col-md-6">
