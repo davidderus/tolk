@@ -1,10 +1,10 @@
 <%= form_tag tolk.search_path, :method => :get, :class => 'form-inline' do %>
   <%= hidden_field_tag :tolk_locale, locale.name %>
-  Search for
+  <%= t 'tolk.search_form.search' %>
   <%= scope_selector_for(@locale) %>
-  phrase:
+  <%= t 'tolk.search_form.phrase' %>
   <%= text_field_tag :q, params[:q], :class => 'form-control' %>
-  within key:
+  <%= t 'tolk.search_form.within_key' %>
   <%= text_field_tag :k, params[:k], :class => 'form-control' %>
-  <%= submit_tag "Search", :name => nil, :class => 'btn btn-primary' %>
+  <%= submit_tag t('tolk.search_form.submit'), :name => nil, :class => 'btn btn-primary' %>
 <% end %>
