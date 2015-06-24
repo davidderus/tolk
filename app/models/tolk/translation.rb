@@ -30,7 +30,7 @@ module Tolk
     end
 
     def multiline?
-      text.include?("\n") || text.length > 65
+      text.include?('<br>') || text.length > 65
     end
 
     def up_to_date?
