@@ -1,4 +1,4 @@
-<div class="container">
+<%= render layout: 'tolk/layouts/main' do %>
   <h2>Locales <span>Primary locale is <%= Tolk::Locale.primary_locale.language_name %></span></h2>
   <% if @locales.any? %>
     <ul class="locales clearfix list-unstyled">
@@ -28,6 +28,4 @@
     </p>
   </div>
   <% end %>
-</div>
-
-<%= render :partial => "tolk/javascripts" %>
+<% end %>

@@ -1,4 +1,4 @@
-<div class="container">
+<%= render layout: 'tolk/layouts/main' do %>
   <h3 class="switch">Completed translations <small>(<%= link_to 'See phrases missing translation', @locale %>)</small></h3>
 
   <% if @locale.has_updated_translations? && action_name != 'updated' %>
@@ -102,6 +102,4 @@
     <p>&nbsp;</p>
   <% end %>
   </div>
-</div>
-
-<%= render :partial => "tolk/javascripts" %>
+<% end %>
