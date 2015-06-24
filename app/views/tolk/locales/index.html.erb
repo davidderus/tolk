@@ -1,5 +1,5 @@
 <%= render layout: 'tolk/layouts/main' do %>
-  <h2>Locales <small><%= t 'tolk.index.primary_text', locale: Tolk::Locale.primary_locale.language_name %></small></h2>
+  <h2>Locales <small><%= t 'tolk.index.primary_text', l: Tolk::Locale.primary_locale.language_name %></small></h2>
   <% if @locales.any? %>
     <ul class="locales clearfix list-unstyled">
       <% @locales.each do |locale| %>

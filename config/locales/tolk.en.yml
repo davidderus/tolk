@@ -1,0 +1,33 @@
+fr:
+  tolk:
+    search_form:
+      search: 'Search for'
+      phrase: 'phrase'
+      within_key: 'in key'
+      submit: 'Search'
+    show:
+      phrases_missing_title: 'Phrases missing translation (%{count})'
+      phrases_missing_title_w_count: 'Phrases missing translation'
+      see_completed: 'See completed translations'
+      changes: 'Some phrases have changed.'
+      update_translations: 'Update translations'
+      interpolation_mismatch: "Interpolation keys don't match"
+      copy_original: "Copy original translation"
+      original: 'Original:'
+      save: 'Save changes'
+      no_translations: "There aren't any completed translations for this locale."
+      updated: 'Updated'
+      previous: 'Previous'
+      translation: 'Translation:'
+      completed: 'Completed translations'
+      no_results: 'No search results.'
+    index:
+      no_locales: "Aucune locale définie."
+      add_locale_text: 'Add a locale'
+      add_locale: 'Add'
+      locales_title: 'Locales'
+      primary_text: "Primary locale is %{l}"
+    alert:
+      close: 'Close'
+    all:
+      missing_translations: "See phrases missing translation"
