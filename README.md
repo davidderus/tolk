@@ -72,7 +72,11 @@ Once done with translating all the pending strings, you are can write back the n
 
 
 ```bash
-  $ rake tolk:dump_yaml["the_target_locale"]
+  # With Bash
+  $ rake tolk:dump_yaml[the_target_locale]
+
+  # With Zsh
+  $ rake 'tolk:dump_yaml[the_target_locale]'
 ```
 
 This command will generate a single yml file for a specified locale. The locale ISO code should be given in string format as the only argument ("en-us" or "en-gb" for example).
