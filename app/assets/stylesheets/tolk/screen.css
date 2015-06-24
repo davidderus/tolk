@@ -21,11 +21,6 @@ span.updated {
   float: right;
 }
 
-div.translations {
-  width: 96%;
-  text-align: center;
-}
-
 span.notice {
   background: #ffc;
   color: #666;
