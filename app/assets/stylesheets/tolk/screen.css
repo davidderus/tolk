@@ -252,12 +252,12 @@ div.updated {
   padding: 1px 8px 4px;
 }
 
-table.translations div.previous span.key {
+.translations div.previous span.key {
   margin: 0 0 -2px;
   padding: 0;
 }
 
-table.translations div.updated span.key {
+.translations div.updated span.key {
   margin: 0 0 -2px;
   color: orange !important;
   padding: 0;
@@ -267,57 +267,13 @@ table.translations div.updated span.key {
 Translation tables
 -------------------------------------------------*/
 
-table.translations {
-  margin: 0 0 25px;
-  width: 100%;
-  text-align: left;
-}
-
-table.translations td,
-table.translations th {
-  font-size: 14px;
-  color: #222;
-  padding: 12px 8px;
-  border-bottom: 1px solid #e5e5e5;
-  vertical-align: top;
-  width: 48%;
-}
-
-table.translations th {
-  border-bottom-color: #bbb;
-  font-size: 11px;
-  font-weight: bold;
-  text-transform: uppercase;
-  color: #999;
-  padding-bottom: 2px;
-}
-
-table.translations th.actions {
-  width: 50px;
-}
-
-table.translations textarea.locale {
-  font-family: "Lucida Sans", "Lucida Grande", "Lucida Sans Unicode", sans-serif;
-  font-size: 14px;
-  line-height: 21px;
-  color: #222;
-  padding: 1px;
-  width: 100%;
-  height: 42px;
-}
-
 .translations span.key {
   color: #aaa;
   font-size: 9px;
   display: block;
 }
 
-.translations .actions a {
-  font-weight: bold;
-  text-decoration: none;
-}
-
-.translations .actions .warning {
+.translations .warning {
   font-weight: bold;
   font-size: 25px;
   color: orange;

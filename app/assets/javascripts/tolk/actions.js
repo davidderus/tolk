@@ -1,7 +1,7 @@
 $(function () {
-
+  console.debug('Loading actions');
   // Copy text action
-  $(".translations .actions .copy").click(function (e) {
+  $(".translations .copy").click(function (e) {
     e.preventDefault();
 
     var row = $(this).parents(".row")
