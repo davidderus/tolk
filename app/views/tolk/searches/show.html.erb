@@ -4,9 +4,9 @@
   </div>
 
   <div class="search_exits">
-    <%= link_to "Phrases missing translation", @locale %>
+    <%= link_to t('tolk.show.phrases_missing_title_w_count'), @locale %>
     &nbsp;
-    <%= link_to "Completed translations", tolk.all_locale_path(@locale) %>
+    <%= link_to t('tolk.show.completed'), tolk.all_locale_path(@locale) %>
   </div>
 
   <br>
@@ -95,7 +95,7 @@
         <%= tolk_paginate @phrases %>
       </div>
     <% else %>
-      <p style="text-align: left">No search results.</p>
+      <p style="text-align: left"><%= t 'tolk.show.no_results' %></p>
     <% end %>
   </div>
 <% end %>

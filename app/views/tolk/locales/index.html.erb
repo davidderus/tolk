@@ -1,5 +1,5 @@
 <%= render layout: 'tolk/layouts/main' do %>
-  <h2>Locales <span>Primary locale is <%= Tolk::Locale.primary_locale.language_name %></span></h2>
+  <h2>Locales <small><%= t 'tolk.index.primary_text', locale: Tolk::Locale.primary_locale.language_name %></small></h2>
   <% if @locales.any? %>
     <ul class="locales clearfix list-unstyled">
       <% @locales.each do |locale| %>
@@ -14,17 +14,17 @@
     </ul>
 
   <% else %>
-    <p>No locales yet.</p>
+    <p><%= t 'tolk.index.no_locales' %></p>
 
   <% end %>
   <%= form_for(Tolk::Locale.new, :html => {:class => 'form-inline'}) do |f| %>
   <div class="submit">
     <p>
-      <%= f.label "Add a new Locale" %>
+      <%= f.label t('tolk.index.add_locale_text') %>
       <select id="select_tolk_locale_name" name="tolk_locale[name]" class="form-control">
         <%= options_for_select tolk_locale_selection %>
       </select>
-      <%= f.submit 'Add', class: 'btn btn-primary' %>
+      <%= f.submit t('tolk.index.add_locale'), class: 'btn btn-primary' %>
     </p>
   </div>
   <% end %>
