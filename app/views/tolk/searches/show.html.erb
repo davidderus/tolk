@@ -9,6 +9,8 @@
     <%= link_to "Completed translations", tolk.all_locale_path(@locale) %>
   </div>
 
+  <br>
+
   <div class="translations">
     <% if @phrases.any? %>
        <%= form_for @locale do |locale_form| %>

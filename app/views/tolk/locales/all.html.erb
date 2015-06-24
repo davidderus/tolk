@@ -9,6 +9,8 @@
     <%= render :partial => "tolk/searches/form", :locals => { :locale => @locale } %>
   </div>
 
+  <br>
+
   <div class="translations">
   <% if @phrases.any? %>
     <%= form_for @locale do |locale_form| %>
