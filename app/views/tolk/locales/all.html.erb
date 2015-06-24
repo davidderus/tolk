@@ -58,7 +58,12 @@
                 <div class="translation col-md-6">
                   <%= hidden_field_tag :"translations[][id]", phrase.translation.id %>
                   <%= hidden_field_tag :"translations[][locale_id]", phrase.translation.locale_id %>
-                  <div>Translation: <a class="copy" href="#" tabindex="-1" title="Copy original translation">Copy original</a><br></div>
+                  <div>
+                    Translation:
+                    <a class="copy" href="#" tabindex="-1" title="Copy original translation">Copy original</a>
+                    <span class="warning" title="Interpolation keys don't match">⚠</span>
+                  </div>
+                  
                   <% if multiline %>
                     <%= text_area_tag :"translations[][text]", format_i18n_text_area_value(phrase.translation.text), :class => 'locale form-control' %>
                   <% else %>
