@@ -14,26 +14,26 @@
   <div class="translations">
   <% if @phrases.any? %>
     <%= form_for @locale do |locale_form| %>
-          <table class="translations">
-        <tr>
-          <th class="translation"><%= @locale.language_name -%></th>
-          <th class="actions"></th>
-          <th class="key"><%= Tolk::Locale.primary_language_name -%></th>
-        </tr>
+      <div class="translations">
+        <div class="row">
+          <div class="translation col-md-5"><%= @locale.language_name -%></div>
+          <div class="actions col-md-2"></div>
+          <div class="key col-md-5"><%= Tolk::Locale.primary_language_name -%></div>
+        </div>
         <% @phrases.each do |phrase| %>
           <% if phrase.translations.primary %>
-            <tr>
-              <td class="translation">
+            <div class="row">
+              <div class="translation col-md-5">
                 <%= hidden_field_tag :"translations[][id]", phrase.translation.id %>
                 <%= hidden_field_tag :"translations[][locale_id]", phrase.translation.locale_id %>
                 <%= text_area_tag :"translations[][text]", format_i18n_text_area_value(phrase.translation.text), :class => 'locale form-control',
                                   :onfocus => "$(this).up('tr').addClassName('active');", :onblur => "$(this).up('tr').removeClassName('active');" %>
-              </td>
-              <td class="actions">
+              </div>
+              <div class="actions col-md-2">
                 <a class="copy" href="#" tabindex="-1" title="Copy original translation">&larr;</a><br>
                 <span class="warning" title="Interpolation keys don't match">⚠</span>
-              </td>
-              <td class="original">
+              </div>
+              <div class="original col-md-5">
                 <%= text_area_tag :"translations[][original_text]", format_i18n_text_area_value(phrase.translations.primary.text), :disabled => true, :class => 'form-control' %>
 
                 <% if action_name == 'updated' %>
@@ -52,11 +52,11 @@
                 <% end %>
 
                 <span class="key"><%= phrase.key %></span>
-              </td>
-            </tr>
+              </div>
+            </div>
           <% end %>
         <% end %>
-      </table>
+      </div>
       <div class="table_submit">
         <p><%= locale_form.submit "Save changes", :class => 'save btn btn-success' %></p>
       </div>
