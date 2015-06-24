@@ -6,7 +6,7 @@
       <button type="button" class="close" data-dismiss="alert" aria-label="Close">
         <span aria-hidden="true">&times;</span>
       </button>
-      Some phrases have changed. <%= link_to "Update translations", tolk.updated_locale_path(@locale) %>.
+      <%= t 'tolk.show.changes' %> <%= link_to t('tolk.show.update_translations'), tolk.updated_locale_path(@locale) %>.
     </div>
   <% end %>
 
@@ -47,7 +47,7 @@
                   <code><%= format_i18n_value(phrase.translations.primary.previous_text) -%></code>
                 </div>
               <% else %>
-                Original:
+                <%= t 'tolk.show.original' %>
                 <code><%= format_i18n_value(phrase.translations.primary.text) -%></code>
                 <%= boolean_warning if phrase.translations.primary.boolean? -%>
               <% end %>
@@ -60,10 +60,10 @@
                   <%= hidden_field_tag :"translations[][locale_id]", phrase.translation.locale_id %>
                   <div>
                     Translation:
-                    <a class="copy" href="#" tabindex="-1" title="Copy original translation">Copy original</a>
-                    <span class="warning" title="Interpolation keys don't match">⚠</span>
+                    <a class="copy" href="#" tabindex="-1"><%= t('tolk.show.copy_original') %></a>
+                    <span class="warning" title="<%= t('tolk.show.interpolation_mismatch') %>">⚠</span>
                   </div>
-                  
+
                   <% if multiline %>
                     <%= text_area_tag :"translations[][text]", format_i18n_text_area_value(phrase.translation.text), :class => 'locale form-control' %>
                   <% else %>
@@ -71,7 +71,7 @@
                   <% end %>
                 </div>
                 <div class="original col-md-6">
-                  <div>Original:</div>
+                  <div><%= t 'tolk.show.original' %></div>
 
                   <% if multiline %>
                     <%= text_area_tag :"translations[][original_text]",
@@ -96,14 +96,14 @@
         <% end %>
       </div>
       <div class="table_submit">
-        <p><%= locale_form.submit "Save changes", :class => 'save btn btn-success' %></p>
+        <p><%= locale_form.submit t('tolk.show.save'), :class => 'save btn btn-success' %></p>
       </div>
       <div class="paginate text-center">
         <%= tolk_paginate @phrases %>
       </div>
     <% end %>
   <% else %>
-    <p style="text-align: left">There aren't any completed translations for this locale.</p>
+    <p style="text-align: left"><%= t 'tolk.show.no_translations' %></p>
     <p>&nbsp;</p>
   <% end %>
   </div>

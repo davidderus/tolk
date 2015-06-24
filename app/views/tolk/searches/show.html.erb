@@ -50,8 +50,8 @@
                       <%= hidden_field_tag :"translations[][locale_id]", translation.locale_id, :id => "#{translation.object_id}_locale_id" %>
                       <div>
                         Translation:
-                        <a class="copy" href="#" tabindex="-1" title="Copy original translation">Copy original</a>
-                        <span class="warning" title="Interpolation keys don't match">⚠</span>
+                        <a class="copy" href="#" tabindex="-1"><%= t('tolk.show.copy_original') %></a>
+                        <span class="warning" title="<%= t('tolk.show.interpolation_mismatch') %>">⚠</span>
                       </div>
 
                       <% if multiline %>
@@ -62,7 +62,7 @@
                     </div>
                     <div class="original col-md-6">
                       <div>
-                        Original:
+                        <%= t 'tolk.show.original' %>
                       </div>
 
                       <% if multiline %>
@@ -88,7 +88,7 @@
           <% end %>
         </div>
         <div class="table_submit">
-          <p><%= locale_form.submit "Save changes", :class => 'save btn btn-success' %></p>
+          <p><%= locale_form.submit t('tolk.show.save'), :class => 'save btn btn-success' %></p>
         </div>
       <% end %>
       <div class="paginate text-center">
