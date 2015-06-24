@@ -39,16 +39,16 @@
               <% if action_name == 'updated' %>
                 <div class="updated">
                   <span class="key">Updated</span>
-                  <%= format_i18n_value(phrase.translations.primary.text) -%>
+                  <code><%= format_i18n_value(phrase.translations.primary.text) -%></code>
                   <%= boolean_warning if phrase.translations.primary.boolean? -%>
                 </div>
                 <div class="previous">
                   <span class="key">Previous</span>
-                  <%= format_i18n_value(phrase.translations.primary.previous_text) -%>
+                  <code><%= format_i18n_value(phrase.translations.primary.previous_text) -%></code>
                 </div>
               <% else %>
                 Original:
-                <%= format_i18n_value(phrase.translations.primary.text) -%>
+                <code><%= format_i18n_value(phrase.translations.primary.text) -%></code>
                 <%= boolean_warning if phrase.translations.primary.boolean? -%>
               <% end %>
             </div>
