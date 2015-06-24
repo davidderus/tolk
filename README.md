@@ -156,3 +156,21 @@ Tolk speaks YAML for non strings values. If you want to enter a nil values, you 
 ```
 
 And Tolk will take care of generating the appropriate entry in the YAML file.
+
+## i18n
+
+By default, Tolk came with an english translation.
+To create other translations, create a new locale file in your main application, like:
+
+```yml
+  # config/locales/tolk.fr.yml
+  fr:
+  tolk:
+    search_form:
+      search: 'Rechercher pour'
+      phrase: 'la phrase'
+      within_key: 'dans la clé'
+      submit: 'Valider'
+```
+
+Don't forget to restart your Rails server right after creating the yml.
