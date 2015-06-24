@@ -10,6 +10,9 @@ This is a forked version of Tolk, with numerous changes:
 - Path handling, no need to override Tolk's templates to prefix paths with *main_app*
 - Bootstrap support, as all of our projects use it
 
+## TODO
+- Keep it DRY! (not the case in original version too)
+
 ## Requirements
 
 Tolk is compatible with Rails 4.0, 4.1, and 4.2.
