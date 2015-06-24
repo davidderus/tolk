@@ -30,7 +30,7 @@ module Tolk
     end
 
     def multiline?
-      text.lines.length > 1 || text.length > 65
+      text.is_a?(Hash) || text.length > 65
     end
 
     def up_to_date?
