@@ -16,13 +16,12 @@
     <%= form_for @locale do |locale_form| %>
       <div class="translations">
         <div class="row">
-          <div class="translation col-md-5">
+          <div class="translation col-md-6">
             <div class="h5">
               <%= @locale.language_name -%>
             </div>
           </div>
-          <div class="actions col-md-2"></div>
-          <div class="key col-md-5">
+          <div class="key col-md-6">
             <div class="h5">
               <%= Tolk::Locale.primary_language_name -%>
             </div>
@@ -31,24 +30,14 @@
         <% @phrases.each do |phrase| %>
           <% if phrase.translations.primary %>
             <div class="row">
-              <div class="translation col-md-5">
+              <div class="translation col-md-6">
                 <%= hidden_field_tag :"translations[][id]", phrase.translation.id %>
                 <%= hidden_field_tag :"translations[][locale_id]", phrase.translation.locale_id %>
+                <div>Translation:</div>
                 <%= text_area_tag :"translations[][text]", format_i18n_text_area_value(phrase.translation.text), :class => 'locale form-control',
                                   :onfocus => "$(this).up('tr').addClassName('active');", :onblur => "$(this).up('tr').removeClassName('active');" %>
               </div>
-              <div class="actions col-md-2">
-                <a class="copy" href="#" tabindex="-1" title="Copy original translation">&larr;</a><br>
-                <span class="warning" title="Interpolation keys don't match">⚠</span>
-              </div>
-              <div class="original col-md-5">
-                <%= text_area_tag :"translations[][original_text]",
-                    format_i18n_text_area_value(phrase.translations.primary.text),
-                    :disabled => true,
-                    :class => 'form-control',
-                    :title => phrase.key
-                %>
-
+              <div class="original col-md-6">
                 <% if action_name == 'updated' %>
                   <div class="updated">
                     <span class="key">Updated</span>
@@ -60,10 +49,17 @@
                     <%= format_i18n_value(phrase.translations.primary.previous_text) -%>
                   </div>
                 <% else %>
+                  Original:
                   <%= format_i18n_value(phrase.translations.primary.text) -%>
                   <%= boolean_warning if phrase.translations.primary.boolean? -%>
                 <% end %>
 
+                <%= text_area_tag :"translations[][original_text]",
+                    format_i18n_text_area_value(phrase.translations.primary.text),
+                    :disabled => true,
+                    :class => 'form-control',
+                    :title => phrase.key
+                %>
               </div>
             </div>
           <% end %>
