@@ -53,7 +53,7 @@
               <% end %>
             </div>
             <div class="panel-body">
-              <% multiline = phrase.translations.primary.text.multiline? %>
+              <% multiline = phrase.translations.primary.multiline? %>
               <div class="row">
                 <div class="translation col-md-6">
                   <%= hidden_field_tag :"translations[][id]", phrase.translation.id %>
