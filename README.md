@@ -3,6 +3,13 @@
 
 Tolk is a Rails engine designed to facilitate the translators doing the dirty work of translating your application to other languages.
 
+## Disclaimer
+
+This is a forked version of Tolk, with numerous changes:
+- No engine layout, Tolk use the Rails project one's
+- Path handling, no need to override Tolk's templates to prefix paths with *main_app*
+- Bootstrap support, as all of our projects use it
+
 ## Requirements
 
 Tolk is compatible with Rails 4.0, 4.1, and 4.2.
@@ -12,7 +19,7 @@ Tolk is compatible with Rails 4.0, 4.1, and 4.2.
 To install add the following to your Gemfile:
 
 ```ruby
-  gem 'tolk'
+  gem 'tolk', git: 'git@gitlab:dderus/tolk.git', branch: :master
 ```
 
 Also add either [`kaminari`](https://github.com/amatsuda/kaminari) or [`will_paginate`](https://github.com/mislav/will_paginate):
@@ -122,6 +129,17 @@ If you want to authenticate users who can access Tolk, you need to provide <tt>T
 ```
 
 Authenticator proc will be run from a before filter in controller context.
+
+Or to use with Devise and some RBAC:
+
+```ruby
+  # config/initializers/tolk.rb
+  Tolk::ApplicationController.authenticator = proc {
+    unless current_user && current_user.is_admin?
+      redirect_to main_app.new_user_session_path
+    end
+  }
+```
 
 ## Handling blank and non-string values
 
