@@ -9,6 +9,7 @@ This is a forked version of Tolk, with numerous changes:
 - No engine layout, Tolk use the Rails project one's
 - Path handling, no need to override Tolk's templates to prefix paths with *main_app*
 - Bootstrap support, as all of our projects use it
+- i18n enabled
 
 ## TODO
 - Keep it DRY! (not the case in original version too)
