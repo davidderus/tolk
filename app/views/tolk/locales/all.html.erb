@@ -42,7 +42,12 @@
                 <span class="warning" title="Interpolation keys don't match">⚠</span>
               </div>
               <div class="original col-md-5">
-                <%= text_area_tag :"translations[][original_text]", format_i18n_text_area_value(phrase.translations.primary.text), :disabled => true, :class => 'form-control' %>
+                <%= text_area_tag :"translations[][original_text]",
+                    format_i18n_text_area_value(phrase.translations.primary.text),
+                    :disabled => true,
+                    :class => 'form-control',
+                    :title => phrase.key
+                %>
 
                 <% if action_name == 'updated' %>
                   <div class="updated">
@@ -59,7 +64,6 @@
                   <%= boolean_warning if phrase.translations.primary.boolean? -%>
                 <% end %>
 
-                <span class="key"><%= phrase.key %></span>
               </div>
             </div>
           <% end %>
