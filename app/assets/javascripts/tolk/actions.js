@@ -10,11 +10,11 @@ $(function () {
   });
 
   // avoid lose data
-  $(".translations textarea").bind("keydown", function () {
+  $(".translations textarea, .translations input[type=text]").bind("keydown", function () {
     window.onbeforeunload = confirm;
   });
 
-  $(".translations textarea").bind("change", function () {
+  $(".translations textarea, .translations input[type=text]").bind("change", function () {
     window.onbeforeunload = confirm;
   });
 

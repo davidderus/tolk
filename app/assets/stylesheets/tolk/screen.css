@@ -75,10 +75,6 @@ Translation tables
   background-color: yellow;
 }
 
-.translations .original textarea {
-  display: none;
-}
-
 .translations .original .interpolation,
 .translations .original .carriage_return,
 .translations .original .boolean  {
