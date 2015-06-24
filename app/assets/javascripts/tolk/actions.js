@@ -4,7 +4,7 @@ $(function () {
   $(".translations .actions .copy").click(function (e) {
     e.preventDefault();
 
-    var row = $(this).parents("tr")
+    var row = $(this).parents(".row")
       , original_text = row.find(".original textarea").val();
 
     row.find(".translation textarea").val(original_text.trim()).trigger("change");
