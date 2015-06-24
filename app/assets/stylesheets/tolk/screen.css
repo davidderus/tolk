@@ -306,27 +306,18 @@ table.translations textarea.locale {
   height: 42px;
 }
 
-table.translations span.key {
+.translations span.key {
   color: #aaa;
   font-size: 9px;
   display: block;
 }
 
-table.translations td.translation {
-  padding: 10px 8px;
-}
-
-table.translations td.actions {
-  width: 50px;
-  text-align: center;
-}
-
-table.translations td.actions a {
+.translations .actions a {
   font-weight: bold;
   text-decoration: none;
 }
 
-table.translations td.actions .warning {
+.translations .actions .warning {
   font-weight: bold;
   font-size: 25px;
   color: orange;
@@ -335,28 +326,24 @@ table.translations td.actions .warning {
   cursor: help;
 }
 
-table.translations tr.active td {
-  background: #edf9fe;
-}
-
-table.translations .highlight {
+.translations .highlight {
   background-color: yellow;
 }
 
-table.translations .original textarea {
+.translations .original textarea {
   display: none;
 }
 
-table.translations .original .interpolation, 
-table.translations .original .carriage_return,
-table.translations .original .boolean  {
+.translations .original .interpolation,
+.translations .original .carriage_return,
+.translations .original .boolean  {
   color: #2fadcf;
   font-family: Courier, monospace;
   font-weight: bold;
   cursor: help;
 }
 
-table.translations .original .carriage_return:before {
+.translations .original .carriage_return:before {
   content: "¶";
 }
 
