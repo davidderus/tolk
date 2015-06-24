@@ -49,7 +49,7 @@
                 <%= boolean_warning if phrase.translations.primary.boolean? -%>
               </div>
               <div class="panel-body">
-                <% multiline = (phrase.translations.primary.text.include?("\n") || phrase.translations.primary.text.length > 65) %>
+                <% multiline = phrase.translations.primary.text.multiline? %>
                 <div class="row">
                   <% translation = Tolk::Translation.new(:locale => @locale, :phrase => phrase) %>
                   <div class="translation col-md-6">

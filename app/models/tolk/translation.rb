@@ -29,6 +29,10 @@ module Tolk
       text.is_a?(TrueClass) || text.is_a?(FalseClass) || text == 't' || text == 'f'
     end
 
+    def multiline?
+      text.include?("\n") || text.length > 65
+    end
+
     def up_to_date?
       not out_of_date?
     end

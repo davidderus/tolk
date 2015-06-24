@@ -53,7 +53,7 @@
               <% end %>
             </div>
             <div class="panel-body">
-              <% multiline = (phrase.translations.primary.text.include?("\n") || phrase.translations.primary.text.length > 65) %>
+              <% multiline = phrase.translations.primary.text.multiline? %>
               <div class="row">
                 <div class="translation col-md-6">
                   <%= hidden_field_tag :"translations[][id]", phrase.translation.id %>
