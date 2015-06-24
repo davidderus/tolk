@@ -16,9 +16,17 @@
     <%= form_for @locale do |locale_form| %>
       <div class="translations">
         <div class="row">
-          <div class="translation col-md-5"><%= @locale.language_name -%></div>
+          <div class="translation col-md-5">
+            <div class="h5">
+              <%= @locale.language_name -%>
+            </div>
+          </div>
           <div class="actions col-md-2"></div>
-          <div class="key col-md-5"><%= Tolk::Locale.primary_language_name -%></div>
+          <div class="key col-md-5">
+            <div class="h5">
+              <%= Tolk::Locale.primary_language_name -%>
+            </div>
+          </div>
         </div>
         <% @phrases.each do |phrase| %>
           <% if phrase.translations.primary %>
