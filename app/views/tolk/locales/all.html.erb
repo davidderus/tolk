@@ -38,12 +38,12 @@
             <div class="panel-heading">
               <% if action_name == 'updated' %>
                 <div class="updated">
-                  <span class="key">Updated</span>
+                  <span class="key"><%= t 'tolk.show.updated' %></span>
                   <code><%= format_i18n_value(phrase.translations.primary.text) -%></code>
                   <%= boolean_warning if phrase.translations.primary.boolean? -%>
                 </div>
                 <div class="previous">
-                  <span class="key">Previous</span>
+                  <span class="key"><%= t 'tolk.show.previous' %></span>
                   <code><%= format_i18n_value(phrase.translations.primary.previous_text) -%></code>
                 </div>
               <% else %>
@@ -59,7 +59,7 @@
                   <%= hidden_field_tag :"translations[][id]", phrase.translation.id %>
                   <%= hidden_field_tag :"translations[][locale_id]", phrase.translation.locale_id %>
                   <div>
-                    Translation:
+                    <%= t 'tolk.show.translation' %>
                     <a class="copy" href="#" tabindex="-1"><%= t('tolk.show.copy_original') %></a>
                     <span class="warning" title="<%= t('tolk.show.interpolation_mismatch') %>">⚠</span>
                   </div>

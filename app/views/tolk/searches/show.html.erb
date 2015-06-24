@@ -49,7 +49,7 @@
                       <%= hidden_field_tag :"translations[][phrase_id]", phrase.id, :id => "#{translation.object_id}_phrase_id" %>
                       <%= hidden_field_tag :"translations[][locale_id]", translation.locale_id, :id => "#{translation.object_id}_locale_id" %>
                       <div>
-                        Translation:
+                        <%= t 'tolk.show.translation' %>
                         <a class="copy" href="#" tabindex="-1"><%= t('tolk.show.copy_original') %></a>
                         <span class="warning" title="<%= t('tolk.show.interpolation_mismatch') %>">⚠</span>
                       </div>
