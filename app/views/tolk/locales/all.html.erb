@@ -53,13 +53,13 @@
               <% end %>
             </div>
             <div class="panel-body">
-              <% multiline? = (phrase.translations.primary.text.include?("\n") || phrase.translations.primary.text.length > 65) %>
+              <% multiline = (phrase.translations.primary.text.include?("\n") || phrase.translations.primary.text.length > 65) %>
               <div class="row">
                 <div class="translation col-md-6">
                   <%= hidden_field_tag :"translations[][id]", phrase.translation.id %>
                   <%= hidden_field_tag :"translations[][locale_id]", phrase.translation.locale_id %>
                   <div>Translation:</div>
-                  <% if multiline? %>
+                  <% if multiline %>
                     <%= text_area_tag :"translations[][text]", format_i18n_text_area_value(phrase.translation.text), :class => 'locale form-control',
                                       :onfocus => "$(this).up('tr').addClassName('active');", :onblur => "$(this).up('tr').removeClassName('active');" %>
                   <% else %>
@@ -70,7 +70,7 @@
                 <div class="original col-md-6">
                   <div>Original:</div>
 
-                  <% if multiline? %>
+                  <% if multiline %>
                     <%= text_area_tag :"translations[][original_text]",
                         format_i18n_text_area_value(phrase.translations.primary.text),
                         :disabled => true,
