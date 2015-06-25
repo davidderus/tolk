@@ -1,4 +1,4 @@
 module Tolk
-  VERSION = '1.9.3.35'
+  VERSION = '1.9.3.36'
   # 1.9.3.X = Forked 1.9.3 with revision X
 end
