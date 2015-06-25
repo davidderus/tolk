@@ -54,7 +54,7 @@ class TranslationProcessTest < ActiveSupport::IntegrationCase
   private
 
   def fill_in_first_translation(with_hash)
-    within(:xpath, '//table[@class = "translations"]//tr[2]/td[@class = "translation"][1]') do
+    within(:xpath, '//div[@class = "translations"]/div[2]/div[2]/div[1]/div[@class = "translation col-md-6"][1]') do
       fill_in 'translations[][text]', with_hash
     end
 
