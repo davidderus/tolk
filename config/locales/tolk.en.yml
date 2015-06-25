@@ -30,7 +30,7 @@ fr:
       remaining:
         zero: 'All translated'
         one: 'One translation remaining'
-        other: '%{missing} translations remaining'
+        other: '%{count} translations remaining'
     alert:
       close: 'Close'
     all:

@@ -9,7 +9,7 @@
           <%= link_to locale.language_name, locale %>
           <% missing_count = locale.count_phrases_without_translation %>
           <% if missing_count > 0 %>
-            <span class="missing_translations">(<%= t 'tolk.index.remaining', missing: missing_count %>)</span>
+            <span class="missing_translations">(<%= t 'tolk.index.remaining', count: missing_count %>)</span>
           <% end %>
         </li>
       <% end %>
