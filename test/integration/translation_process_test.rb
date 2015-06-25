@@ -18,17 +18,17 @@ class TranslationProcessTest < ActiveSupport::IntegrationCase
     visit pirate_path
 
     fill_in_first_translation :with => "Dead men don't bite"
-    click_button 'Save changes'
+    click_button I18n.t('tolk.show.save')
 
     assert_equal current_path, pirate_path
     assert_equal 1, locale.translations.count
 
     # Updating the translation added above
-    click_link 'See completed translations'
+    click_link I18n.t('tolk.show.see_completed')
     assert page.has_content?("Dead men don't bite")
 
     fill_in_first_translation :with => "Arrrr!"
-    click_button 'Save changes'
+    click_button I18n.t('tolk.show.save')
 
     assert_equal current_path, tolk.all_locale_path(locale)
     assert_equal 1, locale.translations.count
@@ -47,7 +47,7 @@ class TranslationProcessTest < ActiveSupport::IntegrationCase
     fill_in 'q', :with => 'hello_country'
     fill_in 'k', :with => 'nested'
 
-    click_button 'Search'
+    click_button I18n.t('tolk.search_form.submit')
     assert_equal true, page.has_selector?('td.translation', :count => 1)
   end
 
@@ -63,7 +63,7 @@ class TranslationProcessTest < ActiveSupport::IntegrationCase
   def add_locale(name)
     visit tolk.root_path
     select name, :from => "select_tolk_locale_name"
-    click_button 'Add'
+    click_button I18n.t('tolk.index.add_locale')
 
     Tolk::Locale.where(name: Tolk.config.mapping.key(name)).first!
   end
