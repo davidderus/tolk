@@ -32,6 +32,7 @@
             <% if translation = phrase.translations.where(locale_id: @locale.id).first || Tolk::Translation.new(:locale => @locale, :phrase => phrase) %>
               <div class="panel panel-default">
                 <div class="panel-heading">
+                  <%= phrase.key %>:
                   <code>
                     <% if params[:q].present? -%>
                       <%= highlight(format_i18n_value(phrase.translations.primary.text), params[:q]) -%>
@@ -69,15 +70,13 @@
                         <%= text_area_tag :"translations[][original_text]",
                             format_i18n_text_area_value(phrase.translations.primary.text),
                             :disabled => true,
-                            :class => 'form-control',
-                            :title => phrase.key
+                            :class => 'form-control'
                         %>
                       <% else %>
                         <%= text_field_tag :"translations[][original_text]",
                             format_i18n_text_area_value(phrase.translations.primary.text),
                             :disabled => true,
-                            :class => 'form-control',
-                            :title => phrase.key
+                            :class => 'form-control'
                         %>
                       <% end %>
                     </div>
