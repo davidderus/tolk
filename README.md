@@ -6,7 +6,7 @@ Tolk is a Rails engine designed to facilitate the translators doing the dirty wo
 ## Disclaimer
 
 This is a forked version of Tolk, with numerous changes:
-- No engine layout, Tolk use the Rails project one's
+- No engine layout, Tolk use the Rails project one's (switching from isolated engine to semi-isolated one)
 - Path handling, no need to override Tolk's templates to prefix paths with *main_app*
 - Bootstrap support, as all of our projects use it
 - i18n enabled
