@@ -39,12 +39,12 @@
               <samp><%= phrase.key %></samp> |
               <% if action_name == 'updated' %>
                 <dl class="dl-horizontal">
-                  <dt><span class="key"><%= t 'tolk.show.updated' %></span></dt>
+                  <dt><%= t 'tolk.show.updated' %></dt>
                   <dd>
                     <code><%= format_i18n_value(phrase.translations.primary.text) -%></code>
                     <%= boolean_warning if phrase.translations.primary.boolean? -%>
                   </dd>
-                  <dt><span class="key"><%= t 'tolk.show.previous' %></span></dt>
+                  <dt><%= t 'tolk.show.previous' %></dt>
                   <dd><code><%= format_i18n_value(phrase.translations.primary.previous_text) -%></code></dd>
                 </dl>
               <% else %>
