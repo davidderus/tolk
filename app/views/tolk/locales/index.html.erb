@@ -18,6 +18,8 @@
     <p><%= t 'tolk.index.no_locales' %></p>
   <% end %>
 
+  <hr>
+
   <%= form_for(Tolk::Locale.new, :html => {:class => 'form-inline'}) do |f| %>
   <div class="submit">
     <p>
