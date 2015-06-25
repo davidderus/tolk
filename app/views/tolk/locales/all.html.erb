@@ -36,17 +36,17 @@
           <% if phrase.translations.primary %>
           <div class="panel panel-default">
             <div class="panel-heading">
+              <%= phrase.key %> |
               <% if action_name == 'updated' %>
-                <%= phrase.key %>:
-                <div class="updated">
+                <span class="updated">
                   <span class="key"><%= t 'tolk.show.updated' %></span>
                   <code><%= format_i18n_value(phrase.translations.primary.text) -%></code>
                   <%= boolean_warning if phrase.translations.primary.boolean? -%>
-                </div>
-                <div class="previous">
+                </span>
+                <span class="previous">
                   <span class="key"><%= t 'tolk.show.previous' %></span>
                   <code><%= format_i18n_value(phrase.translations.primary.previous_text) -%></code>
-                </div>
+                </span>
               <% else %>
                 <%= t 'tolk.show.original' %>
                 <code><%= format_i18n_value(phrase.translations.primary.text) -%></code>

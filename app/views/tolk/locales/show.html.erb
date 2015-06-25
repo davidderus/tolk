@@ -39,7 +39,7 @@
           <% @phrases.each do |phrase| %>
             <div class="panel panel-default">
               <div class="panel-heading">
-                <%= phrase.key %>:
+                <%= phrase.key %> |
                 <code>
                   <% if params[:q].present? -%>
                     <%= highlight(format_i18n_value(phrase.translations.primary.text), params[:q]) -%>
