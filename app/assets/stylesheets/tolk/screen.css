@@ -30,28 +30,6 @@ span.notice {
   display: inline-block;
 }
 
-div.previous {
-  color: #999;
-  margin: 5px 0;
-  padding: 1px 8px 4px;
-}
-
-div.updated {
-  background: #ffc;
-  padding: 1px 8px 4px;
-}
-
-.translations div.previous span.key {
-  margin: 0 0 -2px;
-  padding: 0;
-}
-
-.translations div.updated span.key {
-  margin: 0 0 -2px;
-  color: orange !important;
-  padding: 0;
-}
-
 /*-------------------------------------------------
 Translation tables
 -------------------------------------------------*/

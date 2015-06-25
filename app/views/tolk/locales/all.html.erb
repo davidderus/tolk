@@ -38,15 +38,15 @@
             <div class="panel-heading">
               <samp><%= phrase.key %></samp> |
               <% if action_name == 'updated' %>
-                <span class="updated">
-                  <span class="key"><%= t 'tolk.show.updated' %></span>
-                  <code><%= format_i18n_value(phrase.translations.primary.text) -%></code>
-                  <%= boolean_warning if phrase.translations.primary.boolean? -%>
-                </span>
-                <span class="previous">
-                  <span class="key"><%= t 'tolk.show.previous' %></span>
-                  <code><%= format_i18n_value(phrase.translations.primary.previous_text) -%></code>
-                </span>
+                <dl class="dl-horizontal">
+                  <dt><span class="key"><%= t 'tolk.show.updated' %></span></dt>
+                  <dd>
+                    <code><%= format_i18n_value(phrase.translations.primary.text) -%></code>
+                    <%= boolean_warning if phrase.translations.primary.boolean? -%>
+                  </dd>
+                  <dt><span class="key"><%= t 'tolk.show.previous' %></span></dt>
+                  <dd><code><%= format_i18n_value(phrase.translations.primary.previous_text) -%></code></dd>
+                </dl>
               <% else %>
                 <%= t 'tolk.show.original' %>
                 <code><%= format_i18n_value(phrase.translations.primary.text) -%></code>
