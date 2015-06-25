@@ -4,10 +4,6 @@ module Tolk
   class Engine < Rails::Engine
     isolate_namespace Tolk
 
-    initializer :assets do |app|
-      app.config.i18n.load_path += Dir[app.config.root.join('locales', '*.{rb,yml}').to_s]
-    end
-
     # We need one of the two pagination engines loaded by this point.
     # We don't care which one, just one of them will do.
     begin
