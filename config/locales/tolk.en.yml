@@ -27,6 +27,10 @@ fr:
       add_locale: 'Add'
       locales_title: 'Locales'
       primary_text: "Primary locale is %{l}"
+      remaining:
+        zero: 'All translated'
+        one: 'One translation remaining'
+        other: '%{missing} translations remaining'
     alert:
       close: 'Close'
     all:

@@ -1,22 +1,23 @@
 <%= render layout: 'tolk/layouts/main' do %>
+
   <h2>Locales <small><%= t 'tolk.index.primary_text', l: Tolk::Locale.primary_locale.language_name %></small></h2>
+
   <% if @locales.any? %>
-    <ul class="locales clearfix list-unstyled">
+    <ul class="locales">
       <% @locales.each do |locale| %>
         <li>
           <%= link_to locale.language_name, locale %>
           <% missing_count = locale.count_phrases_without_translation %>
           <% if missing_count > 0 %>
-            <span class="missing_translations"><%= missing_count %></span>
+            <span class="missing_translations">(<%= t 'tolk.index.remaining', missing: missing_count %>)</span>
           <% end %>
         </li>
       <% end %>
     </ul>
-
   <% else %>
     <p><%= t 'tolk.index.no_locales' %></p>
-
   <% end %>
+
   <%= form_for(Tolk::Locale.new, :html => {:class => 'form-inline'}) do |f| %>
   <div class="submit">
     <p>
