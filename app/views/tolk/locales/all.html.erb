@@ -36,7 +36,7 @@
           <% if phrase.translations.primary %>
           <div class="panel panel-default">
             <div class="panel-heading">
-              <%= phrase.key %> |
+              <samp><%= phrase.key %></samp> |
               <% if action_name == 'updated' %>
                 <span class="updated">
                   <span class="key"><%= t 'tolk.show.updated' %></span>
