@@ -10,7 +10,7 @@ Gem::Specification.new do |s|
   s.description = 'Tolk is a web interface for doing i18n translations packaged as an engine for Rails applications.'
   s.license = 'MIT'
 
-  s.authors = ['David Heinemeier Hansson', 'Piotr Sarnacki', 'Emilio Tagua', 'Thomas Darde', 'Ferran Basora']
+  s.authors = ['David Heinemeier Hansson', 'Piotr Sarnacki', 'Emilio Tagua', 'Thomas Darde', 'Ferran Basora', 'David Dérus']
   s.email = 'david@loudthinking.com'
   s.homepage = 'https://github.com/tolk/tolk'
 

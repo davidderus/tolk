@@ -5,7 +5,7 @@ module Tolk
     isolate_namespace Tolk
 
     initializer :assets do |app|
-      app.config.assets.precompile += ['tolk/libraries.js']
+      app.config.i18n.load_path += Dir[app.config.root.join('locales', '*.{rb,yml}').to_s]
     end
 
     # We need one of the two pagination engines loaded by this point.
