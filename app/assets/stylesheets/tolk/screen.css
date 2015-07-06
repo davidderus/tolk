@@ -64,3 +64,9 @@ Translation tables
 .translations .original .carriage_return:before {
   content: "¶";
 }
+
+.translations .locale.changed {
+  border-color: #E9B666;
+  outline: 0;
+  box-shadow: inset 0 1px 1px rgba(0,0,0,.075),0 0 8px rgba(233, 201, 102, 0.6);
+}
