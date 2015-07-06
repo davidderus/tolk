@@ -10,12 +10,14 @@ $(function () {
   });
 
   // avoid lose data
-  $(".translations textarea, .translations input[type=text]").bind("keydown", function () {
-    window.onbeforeunload = confirm;
-  });
-
-  $(".translations textarea, .translations input[type=text]").bind("change", function () {
-    window.onbeforeunload = confirm;
+  $(".translations textarea, .translations input[type=text]").on("keydown input change", function () {
+    var $this = $(this);
+    if ($this.val().length > 0) {
+      window.onbeforeunload = confirm;
+      $this.addClass('changed');
+    } else {
+      $this.removeClass('changed');
+    }
   });
 
   $("input.save, input.apply").click(function () {
